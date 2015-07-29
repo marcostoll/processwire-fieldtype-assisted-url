@@ -53,6 +53,8 @@ class InputfieldAssistedURL extends Inputfield
     public function ___render()
     {
         $field = new InputfieldURL();
+        $field->set('name', $this->attr('name'));
+        $field->set('value', $this->attr('value'));
         $field->set('class', 'InputfieldAssistedURL');
 
         $btn = $this->modules->get('InputfieldButton');
