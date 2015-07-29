@@ -2,22 +2,3 @@
 .idea
 *~
 .DS_Store
-
-# Vagrant machine info
-/.vagrant
-
-# Librarian
-/cookbooks
-/.tmp
-/Cheffile.lock
-
-# Main Application is in a separate git
-/Application
-/ProcessWire
-
-# Local configuration
-/Fulmar/local.config.yml
-
-# Logs
-/Support/logs
-

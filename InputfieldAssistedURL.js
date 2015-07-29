@@ -1,3 +1,4 @@
+// based on /ProcessWire/wire/modules/Inputfield/InputfieldCKEditor/plugins/pwlink/plugin.js
 $(document).ready(function() {
 
 	$(document).on("click", ".InputfieldAssistedURLOpen", function(e) {
