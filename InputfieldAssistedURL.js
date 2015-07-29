@@ -1,4 +1,3 @@
-// @todo determine current page id
 $(document).ready(function() {
 
 	$(document).on("click", ".InputfieldAssistedURLOpen", function(e) {
