@@ -1,0 +1,57 @@
+<?php
+/**
+ * Class FieldtypeAssistedURL
+ *
+ * @author Marco Stoll <m.stoll@core4.de>
+ * @link http://core4.de CORE4 GmbH & Co. KG
+ * @copyright Copyright (c) 2015, CORE4 GmbH & Co. KG
+ * @license MIT http://opensource.org/licenses/MIT
+ * @version 1.0.0
+ * @see http://www.processwire.com
+ * @filesource
+ */
+
+/**
+ * Class FieldtypeAssistedURL
+ */
+class FieldtypeAssistedURL extends FieldtypeURL
+{
+    /**
+     * Get information about this module
+     *
+     * @return array
+     */
+    public static function getModuleInfo()
+    {
+        return [
+            'title' => 'AssistedURL Field',
+            'version' => 100,
+            'summary' => 'Field that stores an URL providing controls for selecting internal pages and files.',
+            'installs' => 'InputfieldAssistedURL',
+        ];
+    }
+
+    /**
+     * Per Module interface, this template method is called when all system classes are loaded and ready for API usage
+     */
+    public function init()
+    {
+        parent::init();
+    }
+
+    /**
+     * Return new instance of the Inputfield associated with this Fieldtype
+     *
+     * @param Page $page
+     * @param Field $field
+     * @return Inputfield
+     */
+    public function getInputfield(Page $page, Field $field)
+    {
+        /** @var InputfieldAssistedURL $inputField */
+        $inputField = $this->modules->get("InputfieldAssistedURL");
+        $inputField->setPage($page);
+
+        return $inputField;
+    }
+}

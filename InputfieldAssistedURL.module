@@ -1,0 +1,67 @@
+<?php
+/**
+ * Class InputfieldAssistedURL
+ *
+ * @author Marco Stoll <m.stoll@core4.de>
+ * @link http://core4.de CORE4 GmbH & Co. KG
+ * @copyright Copyright (c) 2015, CORE4 GmbH & Co. KG
+ * @license MIT http://opensource.org/licenses/MIT
+ * @version 1.0.0
+ * @see http://www.processwire.com
+ * @filesource
+ */
+
+/**
+ * Class InputfieldAssistedURL
+ */
+class InputfieldAssistedURL extends Inputfield
+{
+
+    /**
+     * @var Page
+     */
+    protected $page;
+
+    /**
+     * Get information about this module
+     *
+     * @return array
+     */
+    public static function getModuleInfo()
+    {
+        return [
+            'title' => 'AssistedURL Input',
+            'version' => 100,
+            'summary' => 'Input field for assisted urls.',
+            'requires' => 'FieldtypeAssistedURL',
+        ];
+    }
+
+    /**
+     * Sets the current page
+     *
+     * @param Page $page
+     */
+    public function setPage(Page $page)
+    {
+        $this->page = $page;
+    }
+
+    /**
+     * Render the entire input area for Events
+     */
+    public function ___render()
+    {
+        $field = new InputfieldURL();
+        $field->set('class', 'InputfieldAssistedURL');
+
+        $btn = $this->modules->get('InputfieldButton');
+        $btn->attr('id', $this->attr('name') . "_assistedurl_open");
+        $btn->attr('data-page-id', $this->page->id);
+        $btn->class .= " InputfieldAssistedURLOpen";
+        $btn->icon = 'plus-sign';
+        $btn->value = $this->_('Open Link Assistant');
+
+        return $btn->render() . $field->render();
+    }
+}
