@@ -31,7 +31,7 @@ class InputfieldAssistedURL extends Inputfield
     {
         return [
             'title' => 'AssistedURL Input',
-            'version' => 100,
+            'version' => 101,
             'summary' => 'Input field for assisted urls.',
             'requires' => 'FieldtypeAssistedURL',
         ];
@@ -61,8 +61,8 @@ class InputfieldAssistedURL extends Inputfield
         $btn->attr('id', $this->attr('name') . "_assistedurl_open");
         $btn->attr('data-page-id', $this->page->id);
         $btn->class .= " InputfieldAssistedURLOpen";
-        $btn->icon = 'plus-sign';
-        $btn->value = $this->_('Open Link Assistant');
+        $btn->icon = 'link';
+        $btn->value = '';
 
         return $btn->render() . $field->render();
     }
