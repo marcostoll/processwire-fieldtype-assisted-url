@@ -64,6 +64,6 @@ class InputfieldAssistedURL extends Inputfield
         $btn->icon = 'link';
         $btn->value = '';
 
-        return $btn->render() . $field->render();
+        return $btn->render() . '<div class="InputfieldAssistedUrlText">' . $field->render() . '</div>';
     }
 }
