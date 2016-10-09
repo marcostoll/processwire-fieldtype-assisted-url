@@ -25,7 +25,7 @@ $(document).ready(function() {
             var $i = $iframe.contents();
             var $a = $($("#link_markup", $i).text());
 
-						$(opener).siblings('.InputfieldAssistedUrlText').find('.InputfieldAssistedURLInput').val($a.attr('href'));
+            $(opener).siblings('.InputfieldAssistedUrlText').find('.InputfieldAssistedURLInput').val($a.attr('href'));
 
             $iframe.dialog("close");
         }
